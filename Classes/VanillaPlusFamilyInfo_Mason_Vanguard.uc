@@ -1,0 +1,2 @@
+class VanillaPlusFamilyInfo_Mason_Vanguard extends AOCFamilyInfo_Mason_Vanguard;
+

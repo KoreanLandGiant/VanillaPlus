@@ -1,0 +1,1 @@
+class VanillaPlusGFx_HUDManager extends AOCGFx_HUDManager;

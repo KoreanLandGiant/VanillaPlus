@@ -1,0 +1,34 @@
+var VanillaPlusGFx_EscapeMain     EscapeMenu;
+
+var VanillaPlusGFx_HUDManager HUD;
+
+
+exec function ShowEscapeMenu(optional bool bPlaySound = true)
+{
+	// Initialize Escape menu here
+	if (EscapeMenu == none || !EscapeMenu.bMovieIsOpen)
+	{
+		// Play Escape Menu Sound
+		if (bPlaySound)
+			AOCPlayerController(PlayerOwner).PlayEscapeMenuSound(true);
+
+		EscapeMenu = none;
+		EscapeMenu = VanillaPlusGFx_EscapeMain(OpenGFxScene(EscapeMenu, class'VanillaPlusGFx_EscapeMain', true, true, true, false));
+		EscapeMenu.Start();
+	}
+}
+
+function RemoveEscapeMenu()
+{
+	EscapeMenu.SetMovieCanReceiveFocus(false);
+	EscapeMenu.Close(true);
+	EscapeMenu = none;
+	ShowCursor(false);
+}
+
+
+DefaultProperties
+{
+	PawnClass=class'VanillaPlusPawn'
+	HUDClass=class'VanillaPlusGFx_HUDManager'
+}

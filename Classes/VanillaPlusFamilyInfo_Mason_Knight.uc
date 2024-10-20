@@ -1,0 +1,2 @@
+class VanillaPlusFamilyInfo_Mason_Knight extends AOCFamilyInfo_Mason_Knight;
+
